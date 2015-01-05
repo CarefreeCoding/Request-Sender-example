@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:1.7.2',
+            'com.miglayout:miglayout-swing:4.2',
+            'commons-io:commons-io:2.4',
+            'org.apache.httpcomponents:httpclient:4.3.6',
+            'org.slf4j:slf4j-api:1.7.7'
+
+    testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
